@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Prueba de algoritmia</h1>
+
+    <script>
+
+       const casas1 = [{
+             numeroCasa:0,
+               estado:0
+           },{
+            numeroCasa:1,
+               estado:0
+           },{
+            numeroCasa:2,
+               estado:1
+           },{
+            numeroCasa:3,
+               estado:1
+           },{
+            numeroCasa:4,
+               estado:0
+           },{
+            numeroCasa:5,
+               estado:1
+           },{
+            numeroCasa:6,
+               estado:1
+           },{
+            numeroCasa:7,
+               estado:0
+           },{
+            numeroCasa:8,
+               estado:1
+           },{
+            numeroCasa:9,
+               estado:0
+           }]
+
+
+          
+            
+        const casas2 = []
+
+
+
+         
+        function compararDiasPares(arreglo, newArreglo){
+
+           let posicion2 = 0;
+           let posicion3 = 0;
+            
+            for(let posicion1=0; posicion1 < 8; posicion1+=2){
+                
+               
+               posicion2 += 2;
+               posicion3 = posicion1 + 1;
+    
+               if(arreglo[posicion1].estado === arreglo[posicion2].estado){
+                    
+                 newArreglo[posicion3] = {numeroCasa: posicion3, estado: 0};
+                 console.log(`casa ${posicion1} y casa ${posicion2} son iguales`)
+
+               }else{
+                 newArreglo[posicion3] = {numeroCasa: posicion3, estado: 1};
+                 console.log(`casa ${posicion1} y casa ${posicion2}  NO son iguales`)
+               }
+            };
+
+
+
+        }
+       
+        
+
+        function compararDiasImpares(arreglo, newArreglo){
+
+           let posicion2 = 1;
+           let posicion3 = 0;
+          
+            for(let posicion1=1; posicion1 < 8; posicion1+=2){
+                
+               
+               posicion2 += 2;
+               posicion3 = posicion1 + 1;
+  
+               if(arreglo[posicion1].estado === arreglo[posicion2].estado){
+                    
+                 newArreglo[posicion3] = {numeroCasa: posicion3, estado: 0};
+                 console.log(`casa ${posicion1} y casa ${posicion2} son iguales`)
+               }else{
+                 newArreglo[posicion3] = {numeroCasa: posicion3, estado: 1};
+                 console.log(`casa ${posicion1} y casa ${posicion2}  NO son iguales`)
+               }
+            };
+
+
+        }
+        
+          compararDiasImpares(casas1, casas2);
+          compararDiasPares(casas1, casas2);
+
+
+          console.table(casas1);
+          console.table(casas2);
+           
+        
+
+    
+
+        // casasPares = casas1.filter(estadoCasa => estadoCasa.numeroCasa % 2 == 0);
+        // casasImpares = casas1.filter(estadoCasa => estadoCasa.numeroCasa % 2 != 0);
+           
+
+
+       
+
+
+
+
+       
+         
+
+    </script>
+    
+</body>
+</html>
